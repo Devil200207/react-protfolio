@@ -12,7 +12,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { id: 'projects', label: 'Projects' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
-    { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact' },
   ];
 
