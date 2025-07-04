@@ -2,9 +2,82 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Tabs } from './ui/tabs';
 import { BackgroundBeams } from './ui/background-beams';
+import { ExpandableCards, ExperienceCard } from './ui/expandable-cards';
 import { cn } from '../lib/utils';
 
 const About: React.FC = () => {
+  // Experience data for expandable cards
+  const experienceCards: ExperienceCard[] = [
+    {
+      title: "Full Stack Developer",
+      company: "Lucid Growth",
+      duration: "July 2024 – Present",
+      location: "Remote",
+      description: "Leading full-stack development for ZenInbox, an email deliverability platform. Architected high-performance systems capable of processing 6 crore+ records with significant performance optimizations.",
+      responsibilities: [
+        "Optimized backend performance for ZenInbox, implementing database indexing and query optimizations, reducing API response time from 1.5 minutes to milliseconds while handling 6 crore+ records.",
+        "Developed a comprehensive email deliverability platform with Go and React, featuring email health tests and email placement analysis to ensure consistent Primary inbox delivery instead of Spam or Updates folders.",
+        "Single-handedly architected and developed a high-performance backend system capable of conducting 200+ comprehensive email tests within minutes, enabling rapid email deliverability assessments and optimization.",
+        "Engineered automated Outlook integration for email warmup processes, systematically improving sender reputation, email deliverability rates, and domain authority status through intelligent automation workflows.",
+        "Collaborated with cross-functional teams to gather and analyze requirements, delivering tailored features that aligned with user needs and enhanced overall software quality and email marketing effectiveness."
+      ],
+      ctaText: "View Details",
+      ctaLink: "https://lucidgrowth.com"
+    },
+    {
+      title: "Software Developer Intern",
+      company: "IntelliAssist",
+      duration: "Aug 2023 - Dec 2023",
+      location: "Remote",
+      description: "Focused on frontend development using Angular, significantly improving site performance and SEO metrics while creating intuitive user interfaces.",
+      responsibilities: [
+        "Collaborated with designers and developers to create visually stunning and intuitive user interfaces using angular, resulting in a significant improvement in site performance by 86%.",
+        "Improved SEO performance from 42% to 92% and successfully harmonized design and functionality, resulting in a significantly improved user experience.",
+        "Managed end-to-end frontend development, crafting responsive UI components in Angular and PrimeNG. Enhanced usability and aesthetics, seamlessly translating design into functionality."
+      ],
+      ctaText: "View Details"
+    },
+    {
+      title: "Frontend Developer Intern",
+      company: "Oniric",
+      duration: "Dec 2022 - Aug 2023",
+      location: "Remote",
+      description: "Developed and maintained frontend applications while collaborating with cross-functional teams to ensure seamless integration and staying updated with latest technologies.",
+      responsibilities: [
+        "Developing and maintaining the front end of our applications and websites.",
+        "Collaborating with designers and backend developers to ensure seamless integration of front end elements.",
+        "Staying updated with latest technologies and trends in front end development to implement best practices."
+      ],
+      ctaText: "View Details"
+    },
+    {
+      title: "Frontend Developer Intern",
+      company: "Grivin",
+      duration: "Oct 2022 - Nov 2022",
+      location: "Remote",
+      description: "Gained foundational experience in web development, creating dynamic and visually appealing web pages using core frontend technologies.",
+      responsibilities: [
+        "Developed foundational website structures using HTML, CSS, and JavaScript during a two-month internship at Grivin, laying the groundwork for subsequent development phases.",
+        "Contributed to the creation of dynamic and visually appealing web pages through proficient utilization of front-end technologies, enhancing user engagement and navigation."
+      ],
+      ctaText: "View Details"
+    },
+    {
+      title: "Teaching Assistant Intern",
+      company: "Coding Ninjas",
+      duration: "October 2021 - January 2022",
+      location: "Remote",
+      description: "Mentored students in programming, providing solutions to coding doubts and helping improve their coding skills with excellent student feedback ratings.",
+      responsibilities: [
+        "Resolved and provided solutions to over 650 programming doubts raised by students.",
+        "Assisted and mentored more than 20 students in improving their coding skills.",
+        "Maintained an average rating of 4.86/5 based on student feedback."
+      ],
+      ctaText: "View Details"
+    }
+  ];
+
+  // Tabs for My Story, Professional Experience, and Education
   const tabs = [
     {
       title: "My Story",
@@ -27,34 +100,12 @@ const About: React.FC = () => {
       title: "Experience",
       value: "experience",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-white bg-gradient-to-br from-blue-700 to-indigo-900">
-          <ul className="space-y-6">
-            <li>
-              <h3 className="text-xl font-bold mb-1">Full Stack Developer</h3>
-              <p className="text-blue-200 text-sm mb-2">Lucid Growth | Remote • July 2024 – Present</p>
-              <p className="text-sm text-blue-100">Optimized backend performance for ZenInbox, reducing API response time from 1.5 minutes to milliseconds while handling 6 crore+ records. Developed comprehensive email deliverability platform with Go and React.</p>
-            </li>
-            <li>
-              <h3 className="text-xl font-bold mb-1">Software Developer Intern</h3>
-              <p className="text-blue-200 text-sm mb-2">IntelliAssist | Remote • Aug 2023 - Dec 2023</p>
-              <p className="text-sm text-blue-100">Collaborated with designers and developers using Angular, improving site performance by 86% and SEO performance from 42% to 92%.</p>
-            </li>
-            <li>
-              <h3 className="text-xl font-bold mb-1">Frontend Developer Intern</h3>
-              <p className="text-blue-200 text-sm mb-2">Oniric | Remote • Dec 2022 - Aug 2023</p>
-              <p className="text-sm text-blue-100">Developed and maintained front-end applications, collaborating with designers and backend developers for seamless integration.</p>
-            </li>
-            <li>
-              <h3 className="text-xl font-bold mb-1">Frontend Developer Intern</h3>
-              <p className="text-blue-200 text-sm mb-2">Grivin | Remote • Oct 2022 - Nov 2022</p>
-              <p className="text-sm text-blue-100">Developed foundational website structures using HTML, CSS, and JavaScript, creating dynamic and visually appealing web pages.</p>
-            </li>
-            <li>
-              <h3 className="text-xl font-bold mb-1">Teaching Assistant Intern</h3>
-              <p className="text-blue-200 text-sm mb-2">Coding Ninjas • October 2021 - January 2022</p>
-              <p className="text-sm text-blue-100">Resolved 650+ programming doubts, mentored 20+ students, and maintained a 4.86/5 rating based on student feedback.</p>
-            </li>
-          </ul>
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-8 bg-gradient-to-br from-blue-700 to-indigo-900">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-white mb-2">My Professional Journey</h3>
+            <p className="text-blue-200">Click on any position to explore my detailed experience and achievements</p>
+          </div>
+          <ExpandableCards cards={experienceCards} />
         </div>
       ),
     },
