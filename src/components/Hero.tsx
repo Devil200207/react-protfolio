@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { TextRevealCard } from './ui/text-reveal-card';
 import { TypewriterEffect } from './ui/typewriter-effect';
-import { BackgroundGradient } from './ui/background-gradient';
-import { cn } from '../lib/utils';
 
 const Hero: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

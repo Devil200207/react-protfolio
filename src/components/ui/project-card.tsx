@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { BackgroundGradient } from './background-gradient';
 import { Button } from './button';
 

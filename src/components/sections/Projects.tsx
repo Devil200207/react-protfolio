@@ -101,7 +101,17 @@ const Projects: React.FC = () => {
         <div className="mt-32">
           <h3 className="text-2xl font-bold text-center mb-12">What Clients Say</h3>
           <InfiniteMovingCards
-            items={testimonials}
+            items={testimonials.map(testimonial => ({
+              content: (
+                <div className="space-y-2">
+                  <p className="text-sm text-gray-300">"{testimonial.quote}"</p>
+                  <div className="mt-4">
+                    <p className="font-medium">{testimonial.name}</p>
+                    <p className="text-xs text-gray-400">{testimonial.title}</p>
+                  </div>
+                </div>
+              )
+            }))}
             direction="right"
             speed="slow"
           />

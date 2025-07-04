@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
-import { TracingBeam } from './ui/tracing-beam';
 import { cn } from '../lib/utils';
 
 const Skills: React.FC = () => {

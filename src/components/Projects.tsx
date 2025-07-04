@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HoverEffect } from './ui/card-hover-effect';
 import { CardBody, CardContainer, CardItem } from './ui/3d-card';
-import { cn } from '../lib/utils';
 
 const Projects: React.FC = () => {
   const projects = [

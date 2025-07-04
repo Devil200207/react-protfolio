@@ -12,23 +12,19 @@ type Tab = {
 export const Tabs = ({
   tabs: propTabs,
   containerClassName,
-  activeTabClassName,
   tabClassName,
   contentClassName,
 }: {
   tabs: Tab[];
   containerClassName?: string;
-  activeTabClassName?: string;
   tabClassName?: string;
   contentClassName?: string;
 }) => {
   const [active, setActive] = useState<Tab>(propTabs[0]);
-  const [tabs, setTabs] = useState<Tab[]>(propTabs);
 
   const moveSelectedTabToTop = (idx: number) => {
     const newTabs = [...propTabs];
     const selectedTab = newTabs.splice(idx, 1);
-    setTabs([...selectedTab, ...newTabs]);
     setActive(selectedTab[0]);
   };
 
