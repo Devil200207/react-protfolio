@@ -76,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             Get In Touch
           </a>
           <a
-            href="https://drive.google.com/file/d/1yZGZhROyxIcrjm_YU5EewiSU3jctlJp3/view"
+            href="https://drive.google.com/file/d/1n2fGwxnuHS_ufpoZf6h7YKJq8WRAfUgd/view?usp=sharing"
             target='_blank'
             className="bg-gradient-to-r ml-4 from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
